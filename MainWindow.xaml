@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFToDoListApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="WFP To-do List Application" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <Label Name="ApplicationName" Content="My To-do List" Grid.Row="0" FontWeight="Bold" Padding="10" FontSize="24" Background="#FF041C2C" Foreground="#FFFFFBDB"/>
+        <ListBox Name="TaskListBox" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=10}"/>
+        <StackPanel Name="AddTask" Grid.Row="2" Orientation="Horizontal">
+            <TextBox Name="TextBoxAdd" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Type your task here." Width="680" GotFocus="TextBoxAdd_GotFocus"/>
+            <Button Name ="ButtonAdd" Content="Add Task" HorizontalAlignment="Right" FontSize="16" FontWeight="Bold" Width="120" Click="ButtonAdd_Click" Background="#FF041C2C" Foreground="#FFFFFBDB"/>
+        </StackPanel>
     </Grid>
 </Window>
