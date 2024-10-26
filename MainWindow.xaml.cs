@@ -52,7 +52,7 @@ namespace WPFToDoListApp
         // This method is used to add the placeholder text back in if the user clicks away and has not started adding a task.
         private void TextBoxAdd_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (TextBoxAdd.Text == string.Empty)
+            if (string.IsNullOrWhiteSpace(TextBoxAdd.Text))
             {
                 TextBoxAdd.Text = "Type your task here.";
                 TextBoxAdd.Foreground = Brushes.Gray;
